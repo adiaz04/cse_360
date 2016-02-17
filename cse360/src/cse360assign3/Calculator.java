@@ -10,12 +10,13 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
-	
+	private String history = "";
 	/**
 	 * Creates a new instance of Calculator.
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = Integer.toString(total);
 	}
 	
 	/**
@@ -34,6 +35,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = total + value;
+		history = history + " + " + Integer.toString(value);
 	}
 	
 	/**
@@ -43,6 +45,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		history = history + " - " + Integer.toString(value);
 	}
 	
 	/**
@@ -52,6 +55,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = total * value;
+		history = history + " * " + Integer.toString(value);
 	}
 	
 	/**
@@ -61,6 +65,7 @@ public class Calculator {
 	 */
 	public void divide (int value) {
 		total = (value == 0) ? 0 : (total / value);
+		history = history + " / " + Integer.toString(value);
 	}
 	
 	/**
@@ -69,6 +74,6 @@ public class Calculator {
 	 * @return
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
